@@ -1836,7 +1836,8 @@ class Dataset(DataWithCoords, DatasetArithmetic, Mapping):
 
         References
         ----------
-        https://zarr.readthedocs.io/
+        .. [1] https://zarr.readthedocs.io/
+        .. [2] http://xarray.pydata.org/en/stable/io.html#zarr
 
         Notes
         -----
@@ -1847,9 +1848,6 @@ class Dataset(DataWithCoords, DatasetArithmetic, Mapping):
             If not other chunks are found, Zarr uses its own heuristics to
             choose automatic chunk sizes.
 
-        See Also
-        --------
-        http://xarray.pydata.org/en/stable/io.html#zarr
         """
         from ..backends.api import to_zarr
 
@@ -2571,8 +2569,6 @@ class Dataset(DataWithCoords, DatasetArithmetic, Mapping):
         fill_value : scalar or dict-like, optional
             Value to use for newly missing values. If a dict-like,
             maps variable names (including coordinates) to fill values.
-        sparse : bool, default: False
-            use sparse-array.
         **indexers_kwargs : {dim: indexer, ...}, optional
             Keyword arguments in the same form as ``indexers``.
             One of indexers or indexers_kwargs must be provided.
@@ -5657,6 +5653,7 @@ class Dataset(DataWithCoords, DatasetArithmetic, Mapping):
         **shifts_kwargs : {dim: offset, ...}, optional
             The keyword arguments form of ``shifts``.
             One of shifts or shifts_kwargs must be provided.
+
         Returns
         -------
         rolled : Dataset
